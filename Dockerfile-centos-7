@@ -7,7 +7,13 @@ RUN yum-config-manager --disable base,updates,extras && \
     yum clean all && \
     yum makecache && \
     yum -y update && \
-    yum -y install epel-release && \
+    yum -y install epel-release perl-Test-Simple perl-JSON perl-Email-Date-Format \
+    perl-Email-Simple perl-Net-SSLeay perl-Email-Address perl-IO-Socket-SSL \
+    perl-Mail-Sender perl-YAML perl-ExtUtils-Manifest perl-JSON-MaybeXS perl-JSON-XS \
+    perl-Apache-Session perl-GSSAPI perl-ExtUtils-MakeMaker perl-ExtUtils-Install \
+    mod_perl perl-HTTP-Message perl-HTML-Parser perl-libwww-perl perl-LDAP \
+    perl-LWP-Protocol-https perl-Sys-Syslog perl-Log-Dispatch ImageMagick \
+    perl-IO-Socket-SSL perl-Email-Date-Format ImageMagick-perl && \
     git config --global --add safe.directory /build && \
     rm -f /el7-vault.repo
 
