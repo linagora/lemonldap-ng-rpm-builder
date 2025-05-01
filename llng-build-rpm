@@ -8,4 +8,4 @@ clean:
 %:
 	docker run --rm -it -v `pwd`:/build builder-$@
 
-.PHONY: clean rocky-9 rocky-8 centos-7
+.PHONY: clean
