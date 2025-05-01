@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+all: clean rocky-9 rocky-8 centos-7
+
+clean:
+	make clean
+
+%:
+	docker run --rm -it -v `pwd`:/build builder-$@
+
+.PHONY: clean rocky-9 rocky-8 centos-7

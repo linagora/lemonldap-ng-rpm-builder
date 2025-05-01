@@ -1,0 +1,10 @@
+FROM registry.gitlab.com/orange-opensource/gitlab-buildpkg/rockylinux:8
+
+RUN dnf -y update && \
+    dnf config-manager --enable powertools && \
+    dnf -y install epel-release && \
+    git config --global --add safe.directory /build
+
+COPY start /
+
+CMD [ "/start" ]
